@@ -1,0 +1,23 @@
+2.7
+a) comments b) if c) division and modulus d) The innermost value is evaluated first e) variable 
+2.8
+saved as Assignment
+2.9
+a) true (Because the computer will first solve the problem in the bracket first(parentheses) b) false (because @ and ! are not allowed as a variable (c) false (division has a high precedence) (d) true(because @ and 87 not used as a variable)
+2.10
+a) x = 5
+b) x = 5 and y = 1 
+c) 6 is not equal to 5
+2.11
+a-b) System.out.println("m = m + 1");
+2.12 
+a-d) y = a * x * x + (5 * x) + 2;
+2.13
+ans: 13
+ans: 14
+2.14
+ans: saved on the folder
+2.15
+saved as Aritmetic
+2.16
+saved as Comparism

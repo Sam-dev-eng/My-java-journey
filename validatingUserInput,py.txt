@@ -1,0 +1,9 @@
+sum = 0
+while sum != first_input + second_input:
+first_input = int(input("Enter first number"))
+second_input = int(input("Enter second number"))
+
+sum = first_input + second_input
+    print("Incorrect")
+
+print("Correct")
