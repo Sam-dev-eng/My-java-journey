@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import java.util.Scanner;
 public class LoopPetterns2 {
@@ -35,3 +36,31 @@ break;
 }
 }
 
+=======
+
+import java.util.Scanner;
+public class LoopPetterns2 {
+ public static void main(String[] args) {
+    
+int space = 10;
+
+while (space >= 1){
+
+int collumn = 0;
+
+while (collumn < space){
+System.out.print("*");
+collumn++;
+}
+
+System.out.println("h");
+space--;
+}
+
+}
+}
+
+
+
+
+>>>>>>> 9ec0d21bf8721757b0ad6ee909cea386530f705b

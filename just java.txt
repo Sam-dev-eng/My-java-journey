@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 inport java.util.java;
 public class vowel2{
 public static void main(String[] args){
@@ -25,4 +26,33 @@ System.out.print(
 
 
 
+=======
+inport java.util.java;
+public class vowel2{
+public static void main(String[] args){
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("enter a letter");
+String user = scanner.next().toLowercase();
+char letter = userInput.charAt(0);
+
+if (character.isLetter(letter){
+String letter = firstLetter + "";
+if (letter.equal("a") || letter.equal("e") || latter.equal("i") || later.equal("o") || latter("u"){
+System.out.print(letter + "is a latter");
+}else{
+System.out.print(letter + "is a consonant");
+}else{
+System.out.print( 
+
+
+}
+
+
+
+}
+
+
+
+>>>>>>> 9ec0d21bf8721757b0ad6ee909cea386530f705b
 }
