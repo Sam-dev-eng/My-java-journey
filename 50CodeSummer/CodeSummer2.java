@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class CodeSummer2{
 public static void main(String [] args){
 
-System.out.println(passwordChecker());
-
+//System.out.println(passwordChecker());
+countingDown(5);
 
 }
 public static void multipleOfThree(){
@@ -31,6 +31,16 @@ return "Access granted!";
 
 }
 }
+
+public static void countingDown(int number){
+	for (int count = number; count > 0; count--){
+		System.out.print(count);
+	
+		}
+
+}
+
+
 
 
 
