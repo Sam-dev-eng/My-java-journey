@@ -40,9 +40,9 @@ public class GNet {
     public void sendMessage(String senderName,String recieversNumber,String sendersNumber,String message){
         validateNumber(sendersNumber);
         validateNumber(recieversNumber);
-//        PhoneBooks.unlockPhoneBooks();
+        PhoneBooks.unlockPhoneBooks();
         PhoneBooks.sentMessage(senderName,sendersNumber,recieversNumber,message);
-//        PhoneBooks.lockPhoneBooks();
+        PhoneBooks.lockPhoneBooks();
     }
 
 }

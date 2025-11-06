@@ -92,6 +92,7 @@ public class PhoneBooks {
 
     public static void lockPhoneBooks() {
         addListsToFile();
+        books.clear();
         if(isLocked()) isLocked = false;
     }
 
