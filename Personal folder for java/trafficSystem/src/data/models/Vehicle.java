@@ -4,7 +4,17 @@ import java.time.Year;
 import java.util.ArrayList;
 
 public class Vehicle {
-    String name;
+   private int id;
+   private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     String model;
     Year year;
     String colour;

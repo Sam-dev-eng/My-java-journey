@@ -37,5 +37,74 @@ class VehiclesTest {
         Vehicle expected = vehicles.findById(1);
         assertEquals(initial,expected);
     }
+    @Test
+    public void testToAddTwoItemsAndFindTheTwo(){
+     Vehicle vehicle1 = new Vehicle();
+     Vehicle vehicle2 = new Vehicle();
+     Vehicle initial1 = vehicles.save(vehicle1);
+     Vehicle expected1 = vehicles.findById(1);
+     assertEquals(initial1,expected1);
+     Vehicle initial2 = vehicles.save(vehicle2);
+     Vehicle expected2 = vehicles.findById(2);
+     assertEquals(initial2,expected2);
+
+    }
+    @Test
+    public void testToAddInNoOderAndFindTheTwo(){
+     Vehicle vehicle1 = new Vehicle();
+     Vehicle vehicle2 = new Vehicle();
+     Vehicle initial1 = vehicles.save(vehicle1);
+     Vehicle initial2 = vehicles.save(vehicle2);
+     Vehicle expected2 = vehicles.findById(2);
+     Vehicle expected1 = vehicles.findById(1);
+     assertEquals(initial1,expected1);
+     assertEquals(initial2,expected2);
+
+    }
+    @Test
+    public void testToDeleteItemWithTheId(){
+        Vehicle vehicle1 = new Vehicle();
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle initial1 = vehicles.save(vehicle1);
+        Vehicle initial2 = vehicles.save(vehicle2);
+        Vehicle expected2 = vehicles.findById(2);
+        Vehicle expected1 = vehicles.findById(1);
+        assertEquals(initial1,expected1);
+        assertEquals(initial2,expected2);
+        vehicles.deleteById(2);
+        assertNull(vehicles.findById(2));
+        vehicles.deleteById(1);
+        assertNull(vehicles.findById(1));
+
+    }
+    @Test
+    public void testToDeleteBy_vehicleObject(){
+        Vehicle vehicle1 = new Vehicle();
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle initial1 = vehicles.save(vehicle1);
+        Vehicle initial2 = vehicles.save(vehicle2);
+        Vehicle expected2 = vehicles.findById(2);
+        Vehicle expected1 = vehicles.findById(1);
+        assertEquals(initial1,expected1);
+        assertEquals(initial2,expected2);
+        vehicles.delete(vehicle1);
+        assertNull(vehicles.findById(1));
+    }
+
+@Test
+    public void testToDeleteEverythingInTheListOfVehicles(){
+        Vehicle vehicle1 = new Vehicle();
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle initial1 = vehicles.save(vehicle1);
+        Vehicle initial2 = vehicles.save(vehicle2);
+        Vehicle expected2 = vehicles.findById(2);
+        Vehicle expected1 = vehicles.findById(1);
+        assertEquals(initial1,expected1);
+        assertEquals(initial2,expected2);
+        vehicles.deleteAll();
+        assertNull(vehicles.findAll());
+    }
+
+
 
 }
