@@ -1,10 +1,10 @@
 package data.models;
 
 public enum Ofence {
-    ONEWAY("one way","20_000"),
+    ONEWAY("One way","20_000"),
     DRUNKDRIVING("Drinking while driving", "25_000"),
     NOSEATBELT("No seat belt","2_000"),
-    OVERSPEEDING("over speeding","50_000");
+    OVERSPEEDING("Over speeding","50_000");
 
     private final String ofence;
     private final String payment;

@@ -4,12 +4,23 @@ import java.time.LocalDateTime;
 
 public class Ticket {
     int id;
-    Vehicle vehicle;
+    String vehicleName;
     Ofence ofence;
     boolean hasPaid;
     Officer issuer;
+    Officer paymentOfficer;
     LocalDateTime dateOfBook;
     LocalDateTime dateOfPayment;
+
+    public Officer getPaymentOfficer() {
+        return paymentOfficer;
+    }
+
+    public void setPaymentOfficer(Officer paymentOfficer) {
+        this.paymentOfficer = paymentOfficer;
+    }
+
+
 
     public int getId() {
         return id;
@@ -19,12 +30,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public String getVehicleName() {
+        return vehicleName;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
     }
 
     public Ofence getOfence() {
@@ -55,15 +66,29 @@ public class Ticket {
         return dateOfBook;
     }
 
-    public void setDateOfBook(LocalDateTime dateOfBook) {
-        this.dateOfBook = dateOfBook;
+    public void setDateOfBook() {
+        this.dateOfBook = LocalDateTime.now();
     }
 
     public LocalDateTime getDateOfPayment() {
         return dateOfPayment;
     }
 
-    public void setDateOfPayment(LocalDateTime dateOfPayment) {
-        this.dateOfPayment = dateOfPayment;
+    public void setDateOfPayment() {
+        this.dateOfPayment = LocalDateTime.now();
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", vehicle=" + vehicleName +
+                ", offence=" + ofence +
+                ", hasPaid=" + hasPaid +
+                ", issuer=" + issuer +
+                ", dateOfBook=" + dateOfBook +
+                ", dateOfPayment=" + dateOfPayment +
+                ", Payment Officer="+ paymentOfficer+
+                '}';
     }
 }

@@ -130,9 +130,11 @@ public class PhoneBook {
     }
     private void splitContents(ArrayList<String> content,HashMap<String,String> hashMap){
         for(String contents : content) {
+            System.out.println(contents+"from split content");
             String[] eachContent = contents.split(",");
-            System.out.println(Arrays.toString(eachContent));
+            System.out.println(Arrays.toString(eachContent)+" from spliit again");
             hashMap.put(eachContent[0], eachContent[1]);
+            System.out.println(listOfMessages);
         }
     }
 

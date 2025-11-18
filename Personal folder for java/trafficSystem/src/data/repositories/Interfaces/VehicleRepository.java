@@ -1,9 +1,8 @@
-package data.repositories;
+package data.repositories.Interfaces;
 
 import data.models.Vehicle;
 
 import java.util.HashMap;
-import java.util.List;
 
 public interface VehicleRepository {
     Vehicle save(Vehicle vehicle);

@@ -1,16 +1,20 @@
-package data.repositories;
+package data.repositories.Interfaces;
 
 import data.models.Vehicle;
+import data.repositories.Vehicles;
+import exceptions.VehicleExceptions.EmptyVehiclesException;
+import exceptions.VehicleExceptions.VehicleIdNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VehiclesTest {
-    Vehicles vehicles;
+class VehicleRepositoryTest {
+    VehicleRepository vehicles;
     @BeforeEach
     void setUp() {
         vehicles = new Vehicles();
+        vehicles.deleteAll();
     }
     @Test
     public void testIfListOfMyVehiclesIsEmpty(){
@@ -39,26 +43,26 @@ class VehiclesTest {
     }
     @Test
     public void testToAddTwoItemsAndFindTheTwo(){
-     Vehicle vehicle1 = new Vehicle();
-     Vehicle vehicle2 = new Vehicle();
-     Vehicle initial1 = vehicles.save(vehicle1);
-     Vehicle expected1 = vehicles.findById(1);
-     assertEquals(initial1,expected1);
-     Vehicle initial2 = vehicles.save(vehicle2);
-     Vehicle expected2 = vehicles.findById(2);
-     assertEquals(initial2,expected2);
+        Vehicle vehicle1 = new Vehicle();
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle initial1 = vehicles.save(vehicle1);
+        Vehicle expected1 = vehicles.findById(1);
+        assertEquals(initial1,expected1);
+        Vehicle initial2 = vehicles.save(vehicle2);
+        Vehicle expected2 = vehicles.findById(2);
+        assertEquals(initial2,expected2);
 
     }
     @Test
     public void testToAddInNoOderAndFindTheTwo(){
-     Vehicle vehicle1 = new Vehicle();
-     Vehicle vehicle2 = new Vehicle();
-     Vehicle initial1 = vehicles.save(vehicle1);
-     Vehicle initial2 = vehicles.save(vehicle2);
-     Vehicle expected2 = vehicles.findById(2);
-     Vehicle expected1 = vehicles.findById(1);
-     assertEquals(initial1,expected1);
-     assertEquals(initial2,expected2);
+        Vehicle vehicle1 = new Vehicle();
+        Vehicle vehicle2 = new Vehicle();
+        Vehicle initial1 = vehicles.save(vehicle1);
+        Vehicle initial2 = vehicles.save(vehicle2);
+        Vehicle expected2 = vehicles.findById(2);
+        Vehicle expected1 = vehicles.findById(1);
+        assertEquals(initial1,expected1);
+        assertEquals(initial2,expected2);
 
     }
     @Test
@@ -72,9 +76,9 @@ class VehiclesTest {
         assertEquals(initial1,expected1);
         assertEquals(initial2,expected2);
         vehicles.deleteById(2);
-        assertNull(vehicles.findById(2));
+        assertThrows(VehicleIdNotFoundException.class,()->vehicles.findById(2));
         vehicles.deleteById(1);
-        assertNull(vehicles.findById(1));
+        assertThrows(VehicleIdNotFoundException.class,()->vehicles.findById(1));
 
     }
     @Test
@@ -88,10 +92,10 @@ class VehiclesTest {
         assertEquals(initial1,expected1);
         assertEquals(initial2,expected2);
         vehicles.delete(vehicle1);
-        assertNull(vehicles.findById(1));
+        assertThrows(VehicleIdNotFoundException.class,()->vehicles.findById(1));
     }
 
-@Test
+    @Test
     public void testToDeleteEverythingInTheListOfVehicles(){
         Vehicle vehicle1 = new Vehicle();
         Vehicle vehicle2 = new Vehicle();
@@ -102,7 +106,7 @@ class VehiclesTest {
         assertEquals(initial1,expected1);
         assertEquals(initial2,expected2);
         vehicles.deleteAll();
-        assertNull(vehicles.findAll());
+        assertThrows(EmptyVehiclesException.class,()-> vehicles.findAll());
     }
 
 
