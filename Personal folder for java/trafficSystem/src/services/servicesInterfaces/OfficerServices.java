@@ -8,6 +8,5 @@ import dtos.responses.RegisterOfficerResponse;
 public interface OfficerServices {
     RegisterOfficerResponse registerOfficer(RegisterOfficerRequests requests);
 
-    BookTicketResponse ticketResponse(BookTicketRequests request);
 
 }

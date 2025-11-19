@@ -13,14 +13,8 @@ public class OfficerServiceImpl extends VehicleServiceImpl implements OfficerSer
     public RegisterOfficerResponse registerOfficer(RegisterOfficerRequests requests) {
         Officer officer = map(requests);
         officers.save(officer);
-        return null;
+        return map(officer);
     }
 
-    @Override
-    public BookTicketResponse ticketResponse(BookTicketRequests request) {
-        Ticket ticket = map(request);
-        Tickets tickets = new Tickets();
-        tickets.save(ticket);
-        return null;
-    }
+
 }

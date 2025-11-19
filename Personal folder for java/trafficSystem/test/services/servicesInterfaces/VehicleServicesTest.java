@@ -72,11 +72,11 @@ class VehicleServicesTest {
         settleTicketRequest.setOfficerId(1);
         settleTicketRequest.setVehicleId(1);
         viewTicketsRequest.setVehicleId(1);
-        System.out.println(vehicle.viewTicets(viewTicketsRequest));
+        System.out.println(vehicle.viewTickets(viewTicketsRequest));
         //System.out.println(vehicles.findById(1));
         vehicle.settleTicket(settleTicketRequest);
         viewTicketsRequest.setVehicleId(1);
-        System.out.println(vehicle.viewTicets(viewTicketsRequest));
+        System.out.println(vehicle.viewTickets(viewTicketsRequest));
 
 
     }
